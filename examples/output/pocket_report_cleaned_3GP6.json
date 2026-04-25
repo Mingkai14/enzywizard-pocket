@@ -2,121 +2,125 @@
   "output_type": "enzywizard_pocket",
   "pocket_region_statistics": {
     "pocket_num": 2,
-    "max_pocket_volume": 1024.1814591115,
-    "total_pocket_volume": 1382.1167997035
+    "max_pocket_volume": 1114.4635610056666,
+    "total_pocket_volume": 1467.5487333905
   },
   "pocket_regions": [
     {
-      "volume": 1024.1814591115,
-      "n_spheres": 196,
+      "volume": 1114.4635610056666,
+      "n_spheres": 213,
       "residues": [
         {
-          "aa_id": 31,
+          "aa_id": 32,
           "aa_name": "T"
         },
         {
-          "aa_id": 36,
+          "aa_id": 41,
           "aa_name": "E"
         },
         {
-          "aa_id": 64,
+          "aa_id": 69,
           "aa_name": "D"
         },
         {
-          "aa_id": 65,
+          "aa_id": 70,
           "aa_name": "S"
         },
         {
-          "aa_id": 72,
+          "aa_id": 77,
           "aa_name": "I"
         },
         {
-          "aa_id": 96,
+          "aa_id": 101,
           "aa_name": "T"
         },
         {
-          "aa_id": 100,
+          "aa_id": 105,
           "aa_name": "T"
         },
         {
-          "aa_id": 102,
+          "aa_id": 107,
           "aa_name": "R"
         },
         {
-          "aa_id": 110,
+          "aa_id": 115,
           "aa_name": "L"
         },
         {
-          "aa_id": 112,
+          "aa_id": 117,
           "aa_name": "V"
-        },
-        {
-          "aa_id": 129,
-          "aa_name": "T"
-        },
-        {
-          "aa_id": 131,
-          "aa_name": "I"
         },
         {
           "aa_id": 134,
-          "aa_name": "N"
-        },
-        {
-          "aa_id": 135,
-          "aa_name": "G"
-        },
-        {
-          "aa_id": 137,
-          "aa_name": "V"
-        },
-        {
-          "aa_id": 139,
-          "aa_name": "F"
-        }
-      ],
-      "pocket_center_coord": [15.572500000000002, 45.1734, 29.253299999999996],
-      "pocket_box_boundaries": [18.6406, 10.078799999999987, 19.959799999999998]
-    },
-    {
-      "volume": 357.93534059199993,
-      "n_spheres": 107,
-      "residues": [
-        {
-          "aa_id": 5,
-          "aa_name": "W"
-        },
-        {
-          "aa_id": 8,
           "aa_name": "T"
         },
         {
+          "aa_id": 136,
+          "aa_name": "I"
+        },
+        {
+          "aa_id": 141,
+          "aa_name": "N"
+        },
+        {
+          "aa_id": 142,
+          "aa_name": "N"
+        },
+        {
+          "aa_id": 143,
+          "aa_name": "G"
+        },
+        {
+          "aa_id": 145,
+          "aa_name": "V"
+        },
+        {
+          "aa_id": 147,
+          "aa_name": "F"
+        }
+      ],
+      "pocket_center_coord": [15.572500000000002, 45.127300000000005, 28.825599999999998],
+      "pocket_box_boundaries": [18.6406, 10.170999999999985, 20.815199999999997]
+    },
+    {
+      "volume": 353.08517238483336,
+      "n_spheres": 107,
+      "residues": [
+        {
+          "aa_id": 6,
+          "aa_name": "W"
+        },
+        {
           "aa_id": 9,
+          "aa_name": "T"
+        },
+        {
+          "aa_id": 10,
           "aa_name": "F"
         },
         {
-          "aa_id": 12,
+          "aa_id": 13,
           "aa_name": "N"
         },
         {
-          "aa_id": 49,
+          "aa_id": 54,
           "aa_name": "D"
         },
         {
-          "aa_id": 51,
+          "aa_id": 56,
           "aa_name": "K"
         },
         {
-          "aa_id": 53,
+          "aa_id": 58,
           "aa_name": "N"
         },
         {
-          "aa_id": 77,
+          "aa_id": 82,
           "aa_name": "W"
         }
       ],
-      "pocket_center_coord": [-3.7367999999999997, 33.1905, 42.810700000000004],
-      "pocket_box_boundaries": [9.2204, 8.490199999999994, 13.08659999999999]
+      "pocket_center_coord": [-3.5652, 33.134899999999995, 42.7723],
+      "pocket_box_boundaries": [8.8772, 8.601399999999995, 13.009799999999984]
     }
   ]
 }

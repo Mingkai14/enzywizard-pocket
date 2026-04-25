@@ -1,0 +1,46 @@
+{
+  "output_type": "enzywizard_pocket",
+  "pocket_region_statistics": {
+    "pocket_num": 1,
+    "max_pocket_volume": 233.42802322116665,
+    "total_pocket_volume": 233.42802322116665
+  },
+  "pocket_regions": [
+    {
+      "volume": 233.42802322116665,
+      "n_spheres": 74,
+      "residues": [
+        {
+          "aa_id": 102,
+          "aa_name": "L"
+        },
+        {
+          "aa_id": 103,
+          "aa_name": "P"
+        },
+        {
+          "aa_id": 105,
+          "aa_name": "L"
+        },
+        {
+          "aa_id": 107,
+          "aa_name": "A"
+        },
+        {
+          "aa_id": 163,
+          "aa_name": "R"
+        },
+        {
+          "aa_id": 167,
+          "aa_name": "M"
+        },
+        {
+          "aa_id": 173,
+          "aa_name": "E"
+        }
+      ],
+      "pocket_center_coord": [4.4159, 61.0516, -4.297000000000001],
+      "pocket_box_boundaries": [8.5098, 9.660399999999996, 9.9256]
+    }
+  ]
+}
