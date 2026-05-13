@@ -329,98 +329,78 @@ def calculate_pocket_statistics(pocket_regions: List[Dict[str, Any]]) -> Dict[st
     }
 
 
-def postprocess_pocket_report_to_schema(raw_report: Dict[str, Any]) -> Dict[str, Any]:
+
+def postprocess_pocket_report_to_schema(
+    raw_report: Dict[str, Any],
+) -> Dict[str, Any] | None:
     """
-    Map the original EnzyWizard-Pocket raw report to the new JSON Schema format.
+    Postprocess the raw EnzyWizard-Pocket report into the official JSON Schema field names.
+
     """
 
     if not isinstance(raw_report, dict):
-        return {
-            "report_type": "enzywizard_pocket",
-            "binding_pocket_statistics": {
-                "binding_pocket_count": 0,
-                "max_binding_pocket_volume": 0.0,
-                "total_binding_pocket_volume": 0.0,
-            },
-            "binding_pockets": [],
-        }
+        return None
 
-    raw_statistics = raw_report.get("pocket_region_statistics", {})
-    if not isinstance(raw_statistics, dict):
-        raw_statistics = {}
+    try:
+        raw_statistics = raw_report.get("pocket_region_statistics")
+        if not isinstance(raw_statistics, dict):
+            return None
 
-    raw_pocket_regions = raw_report.get("pocket_regions", [])
-    if not isinstance(raw_pocket_regions, list):
-        raw_pocket_regions = []
+        raw_pocket_regions = raw_report.get("pocket_regions")
+        if not isinstance(raw_pocket_regions, list):
+            return None
 
-    binding_pockets: List[Dict[str, Any]] = []
+        binding_pockets: List[Dict[str, Any]] = []
 
-    for raw_pocket in raw_pocket_regions:
-        if not isinstance(raw_pocket, dict):
-            continue
+        for raw_pocket in raw_pocket_regions:
+            if not isinstance(raw_pocket, dict):
+                return None
 
-        raw_residues = raw_pocket.get("residues", [])
-        if not isinstance(raw_residues, list):
-            raw_residues = []
+            raw_residues = raw_pocket.get("residues")
+            if not isinstance(raw_residues, list):
+                return None
 
-        residues: List[Dict[str, Any]] = []
+            residues: List[Dict[str, Any]] = []
 
-        for raw_residue in raw_residues:
-            if not isinstance(raw_residue, dict):
-                continue
+            for raw_residue in raw_residues:
+                if not isinstance(raw_residue, dict):
+                    return None
 
-            residue_index = raw_residue.get("aa_id")
-            residue_name = raw_residue.get("aa_name")
+                residues.append(
+                    {
+                        "residue_index": raw_residue.get("aa_id"),
+                        "residue_name": raw_residue.get("aa_name"),
+                    }
+                )
 
-            if residue_index is None or residue_name is None:
-                continue
-
-            residues.append(
+            binding_pockets.append(
                 {
-                    "residue_index": int(residue_index),
-                    "residue_name": str(residue_name),
+                    "binding_pocket_volume": raw_pocket.get("volume"),
+                    "binding_pocket_sphere_count": raw_pocket.get("n_spheres"),
+                    "residues": residues,
+                    "binding_pocket_center_coordinate": raw_pocket.get("pocket_center_coord"),
+                    "binding_pocket_box_size": raw_pocket.get("pocket_box_boundaries"),
                 }
             )
 
-        pocket_center_coord = raw_pocket.get("pocket_center_coord", [])
-        if not isinstance(pocket_center_coord, list):
-            pocket_center_coord = []
+        schema_report: Dict[str, Any] = {
+            "report_type": raw_report.get("output_type"),
+            "binding_pocket_statistics": {
+                "binding_pocket_count": raw_statistics.get("pocket_num"),
+                "max_binding_pocket_volume": raw_statistics.get("max_pocket_volume"),
+                "total_binding_pocket_volume": raw_statistics.get("total_pocket_volume"),
+            },
+            "binding_pockets": binding_pockets,
+        }
 
-        pocket_box_boundaries = raw_pocket.get("pocket_box_boundaries", [])
-        if not isinstance(pocket_box_boundaries, list):
-            pocket_box_boundaries = []
+        return schema_report
 
-        binding_pockets.append(
-            {
-                "binding_pocket_volume": float(raw_pocket.get("volume", 0.0)),
-                "binding_pocket_sphere_count": int(raw_pocket.get("n_spheres", 0)),
-                "residues": residues,
-                "binding_pocket_center_coordinate": [
-                    float(x) for x in pocket_center_coord
-                ],
-                "binding_pocket_box_size": [
-                    float(x) for x in pocket_box_boundaries
-                ],
-            }
-        )
+    except Exception:
+        return None
 
-    schema_report: Dict[str, Any] = {
-        "report_type": str(raw_report.get("output_type", "enzywizard_pocket")),
-        "binding_pocket_statistics": {
-            "binding_pocket_count": int(raw_statistics.get("pocket_num", 0)),
-            "max_binding_pocket_volume": float(
-                raw_statistics.get("max_pocket_volume", 0.0)
-            ),
-            "total_binding_pocket_volume": float(
-                raw_statistics.get("total_pocket_volume", 0.0)
-            ),
-        },
-        "binding_pockets": binding_pockets,
-    }
-
-    return schema_report
-
-def generate_pocket_report(pocket_regions: List[Dict[str, Any]]) -> Dict[str, Any]:
+def generate_pocket_report(
+    pocket_regions: List[Dict[str, Any]],
+) -> Dict[str, Any] | None:
     pocket_region_statistics = calculate_pocket_statistics(pocket_regions)
 
     raw_report = {
