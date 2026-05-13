@@ -1,46 +1,46 @@
 {
-  "output_type": "enzywizard_pocket",
-  "pocket_region_statistics": {
-    "pocket_num": 1,
-    "max_pocket_volume": 233.42802322116665,
-    "total_pocket_volume": 233.42802322116665
+  "report_type": "enzywizard_pocket",
+  "binding_pocket_statistics": {
+    "binding_pocket_count": 1,
+    "max_binding_pocket_volume": 233.42802322116665,
+    "total_binding_pocket_volume": 233.42802322116665
   },
-  "pocket_regions": [
+  "binding_pockets": [
     {
-      "volume": 233.42802322116665,
-      "n_spheres": 74,
+      "binding_pocket_volume": 233.42802322116665,
+      "binding_pocket_sphere_count": 74,
       "residues": [
         {
-          "aa_id": 102,
-          "aa_name": "L"
+          "residue_index": 102,
+          "residue_name": "L"
         },
         {
-          "aa_id": 103,
-          "aa_name": "P"
+          "residue_index": 103,
+          "residue_name": "P"
         },
         {
-          "aa_id": 105,
-          "aa_name": "L"
+          "residue_index": 105,
+          "residue_name": "L"
         },
         {
-          "aa_id": 107,
-          "aa_name": "A"
+          "residue_index": 107,
+          "residue_name": "A"
         },
         {
-          "aa_id": 163,
-          "aa_name": "R"
+          "residue_index": 163,
+          "residue_name": "R"
         },
         {
-          "aa_id": 167,
-          "aa_name": "M"
+          "residue_index": 167,
+          "residue_name": "M"
         },
         {
-          "aa_id": 173,
-          "aa_name": "E"
+          "residue_index": 173,
+          "residue_name": "E"
         }
       ],
-      "pocket_center_coord": [4.4159, 61.0516, -4.297000000000001],
-      "pocket_box_boundaries": [8.5098, 9.660399999999996, 9.9256]
+      "binding_pocket_center_coordinate": [4.4159, 61.0516, -4.297000000000001],
+      "binding_pocket_box_size": [8.5098, 9.660399999999996, 9.9256]
     }
   ]
 }

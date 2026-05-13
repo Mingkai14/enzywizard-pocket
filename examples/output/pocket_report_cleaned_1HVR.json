@@ -1,134 +1,134 @@
 {
-  "output_type": "enzywizard_pocket",
-  "pocket_region_statistics": {
-    "pocket_num": 2,
-    "max_pocket_volume": 684.0494933026667,
-    "total_pocket_volume": 1365.5235599656667
+  "report_type": "enzywizard_pocket",
+  "binding_pocket_statistics": {
+    "binding_pocket_count": 2,
+    "max_binding_pocket_volume": 684.0494933026667,
+    "total_binding_pocket_volume": 1365.5235599656667
   },
-  "pocket_regions": [
+  "binding_pockets": [
     {
-      "volume": 684.0494933026667,
-      "n_spheres": 138,
+      "binding_pocket_volume": 684.0494933026667,
+      "binding_pocket_sphere_count": 138,
       "residues": [
         {
-          "aa_id": 1,
-          "aa_name": "P"
+          "residue_index": 1,
+          "residue_name": "P"
         },
         {
-          "aa_id": 2,
-          "aa_name": "Q"
+          "residue_index": 2,
+          "residue_name": "Q"
         },
         {
-          "aa_id": 3,
-          "aa_name": "V"
+          "residue_index": 3,
+          "residue_name": "V"
         },
         {
-          "aa_id": 4,
-          "aa_name": "T"
+          "residue_index": 4,
+          "residue_name": "T"
         },
         {
-          "aa_id": 24,
-          "aa_name": "L"
+          "residue_index": 24,
+          "residue_name": "L"
         },
         {
-          "aa_id": 25,
-          "aa_name": "D"
+          "residue_index": 25,
+          "residue_name": "D"
         },
         {
-          "aa_id": 26,
-          "aa_name": "T"
+          "residue_index": 26,
+          "residue_name": "T"
         },
         {
-          "aa_id": 66,
-          "aa_name": "I"
+          "residue_index": 66,
+          "residue_name": "I"
         },
         {
-          "aa_id": 67,
-          "aa_name": "G"
+          "residue_index": 67,
+          "residue_name": "G"
         },
         {
-          "aa_id": 92,
-          "aa_name": "I"
+          "residue_index": 92,
+          "residue_name": "I"
         },
         {
-          "aa_id": 94,
-          "aa_name": "A"
+          "residue_index": 94,
+          "residue_name": "A"
         },
         {
-          "aa_id": 95,
-          "aa_name": "T"
+          "residue_index": 95,
+          "residue_name": "T"
         },
         {
-          "aa_id": 96,
-          "aa_name": "L"
+          "residue_index": 96,
+          "residue_name": "L"
         },
         {
-          "aa_id": 97,
-          "aa_name": "N"
+          "residue_index": 97,
+          "residue_name": "N"
         },
         {
-          "aa_id": 98,
-          "aa_name": "F"
+          "residue_index": 98,
+          "residue_name": "F"
         }
       ],
-      "pocket_center_coord": [-12.9776, 31.7335, 28.428599999999996],
-      "pocket_box_boundaries": [14.9864, 13.735399999999998, 16.555999999999997]
+      "binding_pocket_center_coordinate": [-12.9776, 31.7335, 28.428599999999996],
+      "binding_pocket_box_size": [14.9864, 13.735399999999998, 16.555999999999997]
     },
     {
-      "volume": 681.4740666629999,
-      "n_spheres": 134,
+      "binding_pocket_volume": 681.4740666629999,
+      "binding_pocket_sphere_count": 134,
       "residues": [
         {
-          "aa_id": 28,
-          "aa_name": "A"
+          "residue_index": 28,
+          "residue_name": "A"
         },
         {
-          "aa_id": 29,
-          "aa_name": "D"
+          "residue_index": 29,
+          "residue_name": "D"
         },
         {
-          "aa_id": 30,
-          "aa_name": "D"
+          "residue_index": 30,
+          "residue_name": "D"
         },
         {
-          "aa_id": 47,
-          "aa_name": "I"
+          "residue_index": 47,
+          "residue_name": "I"
         },
         {
-          "aa_id": 48,
-          "aa_name": "G"
+          "residue_index": 48,
+          "residue_name": "G"
         },
         {
-          "aa_id": 49,
-          "aa_name": "G"
+          "residue_index": 49,
+          "residue_name": "G"
         },
         {
-          "aa_id": 50,
-          "aa_name": "I"
+          "residue_index": 50,
+          "residue_name": "I"
         },
         {
-          "aa_id": 51,
-          "aa_name": "G"
+          "residue_index": 51,
+          "residue_name": "G"
         },
         {
-          "aa_id": 52,
-          "aa_name": "G"
+          "residue_index": 52,
+          "residue_name": "G"
         },
         {
-          "aa_id": 79,
-          "aa_name": "T"
+          "residue_index": 79,
+          "residue_name": "T"
         },
         {
-          "aa_id": 80,
-          "aa_name": "P"
+          "residue_index": 80,
+          "residue_name": "P"
         },
         {
-          "aa_id": 81,
-          "aa_name": "V"
+          "residue_index": 81,
+          "residue_name": "V"
         }
       ],
-      "pocket_center_coord": [-7.749500000000001, 13.964399999999998, 32.2963],
-      "pocket_box_boundaries": [13.196200000000001, 11.502, 16.2302]
+      "binding_pocket_center_coordinate": [-7.749500000000001, 13.964399999999998, 32.2963],
+      "binding_pocket_box_size": [13.196200000000001, 11.502, 16.2302]
     }
   ]
 }
