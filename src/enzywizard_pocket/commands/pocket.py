@@ -1,5 +1,6 @@
 from __future__ import annotations
 from argparse import Namespace, ArgumentParser
+import sys
 from ..services.pocket_service import run_pocket_service
 
 
@@ -14,5 +15,6 @@ def add_pocket_parser(parser: ArgumentParser) -> None:
 
 
 def run_pocket(args: Namespace) -> None:
-    run_pocket_service(input_path=args.input_path,output_dir=args.output_dir,min_rad=args.min_rad,max_rad=args.max_rad,min_volume=args.min_volume)
-
+    success = run_pocket_service(input_path=args.input_path,output_dir=args.output_dir,min_rad=args.min_rad,max_rad=args.max_rad,min_volume=args.min_volume)
+    if not success:
+        sys.exit(1)

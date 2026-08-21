@@ -51,12 +51,20 @@ def run_pocket_service(input_path: str | Path, output_dir: str | Path, min_rad: 
     logger.print("[INFO] Pocket regions calculation started")
     pocket_regions=compute_pockets(structure,logger,min_rad=min_rad,max_rad=max_rad,min_volume=min_volume)
     if pocket_regions is None:
+        logger.print("[ERROR] Pocket regions calculation failed")
         return False
-    report=generate_pocket_report(pocket_regions)
+    report=generate_pocket_report(pocket_regions, logger)
+    if report is None:
+        logger.print("[ERROR] Failed to generate pocket report")
+        return False
 
     # ---- write output ----
     json_report_path = output_dir / get_optimized_filename(f"pocket_report_{name}.json")
-    write_json_from_dict_inline_leaf_lists(report, json_report_path)
+    try:
+        write_json_from_dict_inline_leaf_lists(report, json_report_path)
+    except Exception as e:
+        logger.print(f"[ERROR] Failed to write report JSON to {json_report_path}: {e}")
+        return False
     logger.print(f"[INFO] Report JSON saved: {json_report_path}")
 
     logger.print("[INFO] Pocket processing finished")
